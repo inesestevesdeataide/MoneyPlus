@@ -1,0 +1,94 @@
+@page
+@model MoneyPlus.Pages.Investments.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Financial Investment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Investment.Id" />
+            <div class="form-group">
+                <label asp-for="Investment.PayeeId" class="control-label">Payee</label>
+                <select asp-for="Investment.PayeeId" asp-items="ViewBag.PayeeId"></select>
+                <span asp-validation-for="Investment.PayeeId" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group" : hidden>
+                <label asp-for="@Model.InitialOriginWalletId" class="control-label"></label>
+                <input asp-for="@Model.InitialOriginWalletId" class="form-control" />
+                <span asp-validation-for="@Model.InitialOriginWalletId" class="text-danger"></span>
+            </div>
+            <div class="form-group" : hidden>
+                <label asp-for="@Model.InitialAmount" class="control-label"></label>
+                <input asp-for="@Model.InitialAmount" class="form-control" />
+                <span asp-validation-for="@Model.InitialAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Investment.OriginWalletId" class="control-label">Origin Wallet</label>
+                <select asp-for="Investment.OriginWalletId" asp-items="ViewBag.OriginWalletId"></select>
+                <span asp-validation-for="Investment.OriginWalletId" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group" : hidden>
+                <label asp-for="Investment.DestinationWalletId" class="control-label"></label>
+                <input asp-for="Investment.DestinationWalletId" class="form-control" />
+                <span asp-validation-for="Investment.DestinationWalletId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="Investment.Id" />
+                <label asp-for="@Model.WalletName" class="control-label">Destination Wallet Name</label>
+                <input asp-for="@Model.WalletName" class="form-control" required />
+                <span asp-validation-for="@Model.WalletName" class="text-danger"></span>
+            </div>
+            <p></p>
+            <input type="hidden" asp-for="Investment.Id" />
+            <div class="form-group">
+                <label asp-for="Investment.Description" class="control-label"></label>
+                <input asp-for="Investment.Description" class="form-control" />
+                <span asp-validation-for="Investment.Description" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+            <label asp-for="Investment.Type" class="control-label"></label>
+            <input asp-for="Investment.Type" class="form-control" />
+            <span asp-validation-for="Investment.Type" class="text-danger"></span>
+            </div>*@
+            <p></p>
+            <div class="form-group">
+                <label asp-for="Investment.Amount" class="control-label"></label>
+                <input asp-for="Investment.Amount" class="form-control" />
+                <span asp-validation-for="Investment.Amount" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label asp-for="Investment.Date" class="control-label"></label>
+                <input asp-for="Investment.Date" class="form-control" />
+                <span asp-validation-for="Investment.Date" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label asp-for="Investment.SubcategoryId" class="control-label">Subcategory</label>
+                <select asp-for="Investment.SubcategoryId" asp-items="ViewBag.SubcategoryId"></select>
+                <span asp-validation-for="Investment.SubcategoryId" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,2 @@
+Id,PayeeId,OriginWalletId,DestinationWalletId,Description,Type,Amount,Date,SubcategoryId
+1,2,3,5,NULL,Investment,500,2022-01-18 00:00:00.0000000,55

@@ -1,0 +1,84 @@
+﻿@page
+@model MoneyPlus.Pages.Transfers.SellModel
+@{
+    ViewData["Title"] = "Sell";
+}
+
+<h1>Sell</h1>
+
+<h4>Financial Investment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Transfer.Id" />
+            <input type="hidden" asp-for="Investment.Id" />
+            <div class="form-group" : hidden>
+                <label asp-for="@Model.Transfer.OriginWalletId" class="control-label"></label>
+                <input asp-for="@Model.Transfer.OriginWalletId" class="form-control" />
+                <span asp-validation-for="@Model.Transfer.OriginWalletId" class="text-danger"></span>
+            </div>
+            <div class="form-group" : hidden>
+                <label asp-for="@Model.InitialAmount" class="control-label"></label>
+                <input asp-for="@Model.InitialAmount" class="form-control" />
+                <span asp-validation-for="@Model.InitialAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group" : hidden>
+                <label asp-for="Transfer.Date" class="control-label"></label>
+                <input asp-for="Transfer.Date" class="form-control" />
+                <span asp-validation-for="Transfer.Date" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label asp-for="Transfer.DestinationWalletId" class="control-label">Destination Wallet for Invested Capital</label>
+                <select asp-for="Transfer.DestinationWalletId" asp-items="ViewBag.DestinationWalletId" required>
+                    <option value="" disabled selected>Choose one:</option>
+                </select>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label asp-for="@Model.GainsDestinationWalletId" class="control-label">Destination Wallet for Capital Gains/Losses</label>
+                <select asp-for="@Model.GainsDestinationWalletId" asp-items="ViewBag.GainsDestinationWalletId" required>
+                    <option value="" disabled selected>Choose one:</option>
+                </select>
+            </div>
+            <p></p>
+            <div class="form-group" : hidden>
+                <label asp-for="Transfer.Description" class="control-label"></label>
+                <input asp-for="Transfer.Description" class="form-control" />
+                <span asp-validation-for="Transfer.Description" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+        <label asp-for="Transfer.Type" class="control-label"></label>
+        <input asp-for="Transfer.Type" class="form-control" />
+        <span asp-validation-for="Transfer.Type" class="text-danger"></span>
+        </div>*@
+            <p></p>
+            <div class="form-group">
+                <label asp-for="Transfer.Amount" class="control-label"></label>
+                <input asp-for="Transfer.Amount" class="form-control" required />
+                <span asp-validation-for="Transfer.Amount" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label asp-for="Transfer.SubcategoryId" class="control-label">Subcategory</label>
+                <select asp-for="Transfer.SubcategoryId" asp-items="ViewBag.SubcategoryId" required>
+                    <option value="" disabled selected>Choose one:</option>
+                </select>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <input type="submit" value="Sell" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

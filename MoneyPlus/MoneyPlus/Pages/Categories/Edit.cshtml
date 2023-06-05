@@ -1,0 +1,60 @@
+@page
+@model MoneyPlus.Pages.Categories.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Category</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Category.Id" />
+            <input type="hidden" asp-for="@Model.InitialStatus" />
+            <div class="form-group">
+                <label asp-for="Category.Name" class="control-label"></label>
+                <input asp-for="Category.Name" class="form-control" />
+                <span asp-validation-for="Category.Name" class="text-danger"></span>
+                <p></p>
+                <label asp-for="Category.RecordType" class="control-label">Record Type</label>
+                <select asp-for="Category.RecordType">
+                    <option value="Cash Inflow">Cash Inflow</option>
+                    <option value="Cash Outflow">Cash Outflow</option>
+                    <option value="Investment">Investment</option>
+                    <option value="Transfer">Transfer</option>
+                </select>
+                <p></p>
+                <label asp-for="Category.IsActive" class="control-label">Mark as active?</label>
+                <select asp-for="Category.IsActive">
+                    <option value="True">Yes, the category is active.</option>
+                    <option value="False">No, the category is no longer active.</option>
+                </select>
+                <p></p>
+            </div>
+            @*<p></p>
+        <div class="form-group form-check">
+            <label asp-for="Category.IsActive" class="form-check-label">
+                Keep as active category
+                <input class="form-check-input" asp-for="Category.IsActive" />
+            </label>
+            <span asp-validation-for="Category.IsActive"></span>
+        </div>
+        <p></p>*@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

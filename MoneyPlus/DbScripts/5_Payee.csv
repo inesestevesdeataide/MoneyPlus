@@ -1,0 +1,16 @@
+Id,Name,TaxNumber,IsActive,UserId
+1,Padaria da Esquina,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+2,BCP,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+3,Beauty Things,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+4,The Cave,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+5,EDP,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+6,Mercearia,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+7,Fasano,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+8,Senhorio,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+9,Loja da Maria,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+10,Tertulia,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+11,Cinema,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+12,Bertrand,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+13,"WorldTrotters, SA",NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+14,CarCarCar,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be
+15,Mecanico,NULL,1,c4d4bf94-fc79-43c8-b89a-5a204d31b4be

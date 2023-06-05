@@ -1,0 +1,111 @@
+﻿@page
+@model MoneyPlus.Pages.Reports.MonthlyCashOutflowListingModel
+@{
+    ViewData["Title"] = "Monthly Cash Outflow Listing";
+}
+
+<h1>Monthly Cash Outflow Listing</h1>
+<br />
+<h5>@Model.MonthYear</h5>
+<p></p>
+@if (@Model.HasPrevious())
+{
+    <a asp-page="/Reports/MonthlyCashOutflowListing" asp-route-monthYear="@Model.PreviousMonth()">Previous Month</a>
+}
+@if (@Model.HasNext())
+{
+    <a asp-page="/Reports/MonthlyCashOutflowListing" asp-route-monthYear="@Model.NextMonth()">Next Month</a>
+}
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CashOutflow[0].Date)
+            </th>
+            <th>
+                Origin Wallet
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CashOutflow[0].Payee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CashOutflow[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CashOutflow[0].Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CashOutflow[0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CashOutflow[0].Asset)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CashOutflow)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginWallet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Payee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Asset)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br>
+<br>
+<h5>Filter</h5>
+<div>
+    <form method="get">
+        <div class="form-group" : optional>
+            <label asp-for="@Model.AssetId" class="control-label">Asset</label>
+            <select asp-for="@Model.AssetId" asp-items="ViewBag.AssetId">
+                <option value="0" selected>None</option>
+            </select>
+        </div>
+        <p></p>
+        <div class="form-group" : optional>
+            <label asp-for="@Model.CategoryId" class="control-label">Category</label>
+            <select asp-for="@Model.CategoryId" asp-items="ViewBag.CategoryId">
+                <option value="0" selected>None</option>
+            </select>
+        </div>
+        <p></p>
+        <div class="form-group" : optional>
+            <label asp-for="@Model.PayeeId" class="control-label">Payee</label>
+            <select asp-for="@Model.PayeeId" asp-items="ViewBag.PayeeId">
+                <option value="0" selected>None</option>
+            </select>
+        </div>
+        @*<input type="hidden" asp-for="@Model.currentMonth" />*@
+        <p></p>
+        <div class="form-group">
+            <input type="hidden" asp-for="@Model.MonthYear" asp-route-monthYear="@Model.MonthYear" />
+            <input type="submit" value="Submit" class="btn btn-primary" asp-page-handler="Submit" />
+        </div>
+
+        @*<a asp-page="/Reports/MonthlyCashOutflowListing" asp-route-monthYear="@Model.Month">Submit</a>*@
+    </form>
+</div>
+

@@ -1,0 +1,89 @@
+@page
+@model MoneyPlus.Pages.CashOutflows.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Cash Outflow</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CashOutflow.Id" />
+            <div class="form-group" : hidden>
+                <label asp-for="@Model.InitialOriginWalletId" class="control-label"></label>
+                <input asp-for="@Model.InitialOriginWalletId" class="form-control" />
+                <span asp-validation-for="@Model.InitialOriginWalletId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CashOutflow.PayeeId" class="control-label">Payee</label>
+                <select asp-for="CashOutflow.PayeeId" asp-items="ViewBag.PayeeId"></select>
+                <span asp-validation-for="CashOutflow.PayeeId" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label asp-for="CashOutflow.OriginWalletId" class="control-label">Origin Wallet</label>
+                <select asp-for="CashOutflow.OriginWalletId" asp-items="ViewBag.OriginWalletId"></select>
+                <span asp-validation-for="CashOutflow.OriginWalletId" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="CashOutflow.Id" />
+            <p></p>
+            <div class="form-group" : optional>
+                <label asp-for="CashOutflow.Description" class="control-label"></label>
+                <input asp-for="CashOutflow.Description" class="form-control" placeholder="optional" />
+                <span asp-validation-for="CashOutflow.Description" class="text-danger"></span>
+            </div>
+            <p></p>
+            @*<div class="form-group">
+            <label asp-for="CashOutflow.Type" class="control-label"></label>
+            <input asp-for="CashOutflow.Type" class="form-control" />
+            <span asp-validation-for="CashOutflow.Type" class="text-danger"></span>
+            </div>*@
+            <div class="form-group" : hidden>
+                <label asp-for="@Model.InitialAmount" class="control-label"></label>
+                <input asp-for="@Model.InitialAmount" class="form-control" />
+                <span asp-validation-for="@Model.InitialAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CashOutflow.Amount" class="control-label"></label>
+                <input asp-for="CashOutflow.Amount" class="form-control" />
+                <span asp-validation-for="CashOutflow.Amount" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label asp-for="CashOutflow.Date" class="control-label"></label>
+                <input asp-for="CashOutflow.Date" class="form-control" />
+                <span asp-validation-for="CashOutflow.Date" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label asp-for="CashOutflow.SubcategoryId" class="control-label">Subcategory</label>
+                <select asp-for="CashOutflow.SubcategoryId" asp-items="ViewBag.SubcategoryId"></select>
+                <span asp-validation-for="CashOutflow.SubcategoryId" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group" : optional>
+                <label asp-for="CashOutflow.AssetId" class="control-label">Asset</label>
+                <select asp-for="CashOutflow.AssetId" asp-items="ViewBag.AssetId">
+                    <option value="" selected>None</option>
+                </select>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

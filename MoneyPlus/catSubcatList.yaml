@@ -1,0 +1,206 @@
+- RecordType: Cash Outflow
+  Name: Food
+  IsActive: true
+  Subcategories:
+  - Name: Restaurants
+    IsActive: true
+  - Name: Groceries
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Social
+  IsActive: true
+  Subcategories:
+  - Name: Caffes
+    IsActive: true
+  - Name: Drinks
+    IsActive: true
+  - Name: Nightclubs
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Health
+  IsActive: true
+  Subcategories:
+  - Name: Gym
+    IsActive: true
+  - Name: Medical Appointments
+    IsActive: true
+  - Name: Treatments
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Insurance and Credit
+  IsActive: true
+  Subcategories:
+  - Name: Life Insurance
+    IsActive: true
+  - Name: Non-Life Insurance
+    IsActive: true
+  - Name: Loan Fees
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Government - CO
+  IsActive: true
+  Subcategories:
+  - Name: Government Fees
+    IsActive: true
+  - Name: Taxes
+    IsActive: true
+  - Name: Others - Government
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Culture
+  IsActive: true
+  Subcategories:
+  - Name: Books
+    IsActive: true
+  - Name: Music
+    IsActive: true
+  - Name: Cinema
+    IsActive: true
+  - Name: Museums
+    IsActive: true
+  - Name: Theaters
+    IsActive: true
+  - Name: Others - Culture
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Education
+  IsActive: true
+  Subcategories:
+  - Name: Tuition
+    IsActive: true
+  - Name: School Supplies
+    IsActive: true
+  - Name: Childcare
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Transportation
+  IsActive: true
+  Subcategories:
+  - Name: Public Transports
+    IsActive: true
+  - Name: Gas
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Household
+  IsActive: true
+  Subcategories:
+  - Name: Appliances
+    IsActive: true
+  - Name: Housing or Rent
+    IsActive: true
+  - Name: Utility Bills
+    IsActive: true
+  - Name: Pet Food and Care
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Technology
+  IsActive: true
+  Subcategories:
+  - Name: Subscription Fees
+    IsActive: true
+  - Name: Devices
+    IsActive: true
+  - Name: Accessories
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Personal Upkeep
+  IsActive: true
+  Subcategories:
+  - Name: Clothing
+    IsActive: true
+  - Name: Dry Cleaning
+    IsActive: true
+  - Name: Personal Grooming
+    IsActive: true
+  - Name: Personal Shopping
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Travel
+  IsActive: true
+  Subcategories:
+  - Name: Tickets
+    IsActive: true
+  - Name: Stays
+    IsActive: true
+  - Name: Visas
+    IsActive: true
+  - Name: Others - Travel
+    IsActive: true
+  - Name: Rentals
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Others
+  IsActive: true
+  Subcategories:
+  - Name: Gifts
+    IsActive: true
+  - Name: Others
+    IsActive: true
+- RecordType: Cash Inflow
+  Name: Work
+  IsActive: true
+  Subcategories:
+  - Name: Sallary
+    IsActive: true
+  - Name: Bonus
+    IsActive: true
+- RecordType: Cash Inflow
+  Name: Government - CI
+  IsActive: true
+  Subcategories:
+  - Name: Tax Refunds
+    IsActive: true
+  - Name: Subsidies and Financial Aid
+    IsActive: true
+- RecordType: Cash Inflow
+  Name: Personal Gains
+  IsActive: true
+  Subcategories:
+  - Name: Allowances
+    IsActive: true
+  - Name: Inheritance
+    IsActive: true
+  - Name: Personal Sales
+    IsActive: true
+- RecordType: Transfer
+  Name: Transfer
+  IsActive: true
+  Subcategories:
+  - Name: Transfer Between Wallets
+    IsActive: true
+  - Name: Selling Investment
+    IsActive: true
+  - Name: Selling Asset
+    IsActive: true
+- RecordType: Investment
+  Name: Aimimg Capital Gains
+  IsActive: true
+  Subcategories:
+  - Name: Bonds
+    IsActive: true
+  - Name: Stock Market
+    IsActive: true
+  - Name: NFT
+    IsActive: true
+  - Name: Treasury Bonds
+    IsActive: true
+  - Name: Other Financial Instruments
+    IsActive: true
+- RecordType: Investment
+  Name: Gambling
+  IsActive: true
+  Subcategories:
+  - Name: Casino
+    IsActive: true
+  - Name: Online Gambling
+    IsActive: true
+  - Name: Horse Races
+    IsActive: true
+- RecordType: Cash Outflow
+  Name: Family Support
+  IsActive: true
+  Subcategories:
+  - Name: Nursing Homes
+    IsActive: true
+  - Name: Elderly Care
+    IsActive: true

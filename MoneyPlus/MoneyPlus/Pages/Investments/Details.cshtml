@@ -1,0 +1,67 @@
+@page
+@model MoneyPlus.Pages.Investments.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Financial Investment</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Investment.Payee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Investment.Payee.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Investment.OriginWallet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Investment.OriginWallet.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Investment.DestinationWallet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Investment.DestinationWallet.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Investment.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Investment.Description)
+        </dd>
+        @*<dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Investment.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Investment.Type)
+        </dd>*@
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Investment.Amount)
+        </dt>
+        <dd class="col-sm-10">
+            € @Html.DisplayFor(model => model.Investment.Amount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Investment.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Investment.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Investment.Subcategory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Investment.Subcategory.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Investment?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

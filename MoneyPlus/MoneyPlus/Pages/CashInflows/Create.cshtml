@@ -1,0 +1,77 @@
+@page
+@model MoneyPlus.Pages.CashInflows.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add</h1>
+
+<h4>Cash Inflow</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CashInflow.DestinationWalletId" class="control-label">Destination Wallet</label>
+                <select asp-for="CashInflow.DestinationWalletId" asp-items="ViewBag.DestinationWalletId" required>
+                    <option value="" disabled selected>Choose one:</option>
+                </select>
+            </div>
+            <p></p>
+            <div class="form-group : optional">
+                <label asp-for="CashInflow.Description" class="control-label"></label>
+                <input asp-for="CashInflow.Description" class="form-control" placeholder="optional" />
+                <span asp-validation-for="CashInflow.Description" class="text-danger"></span>
+            </div>
+            <p></p>
+            @*<div class="form-group">
+            <label asp-for="CashInflow.Type" class="control-label"></label>
+            <input asp-for="CashInflow.Type" class="form-control" />
+            <span asp-validation-for="CashInflow.Type" class="text-danger"></span>
+        </div>*@
+            <div class="form-group">
+                <label asp-for="CashInflow.Amount" class="control-label"></label>
+                <input asp-for="CashInflow.Amount" class="form-control" required/>
+                <span asp-validation-for="CashInflow.Amount" class="text-danger"></span>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label asp-for="CashInflow.Date" class="control-label"></label>
+                <input asp-for="CashInflow.Date" class="form-control" required/>
+                <span asp-validation-for="CashInflow.Date" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+            <label asp-for="CashInflow.CategoryId" class="control-label">Category</label>
+            <select asp-for="CashInflow.CategoryId" asp-items="ViewBag.CategoryId" required></select>
+        </div>*@
+            <p></p>
+            <div class="form-group">
+                <label asp-for="CashInflow.SubcategoryId" class="control-label">Subcategory</label>
+                <select asp-for="CashInflow.SubcategoryId" asp-items="ViewBag.SubcategoryId" required>
+                    <option value="" disabled selected>Choose one:</option>
+                </select>
+            </div>
+            <p></p>
+            <div class="form-group" : optional>
+                <label asp-for="CashInflow.AssetId" class="control-label">Asset</label>
+                <select asp-for="CashInflow.AssetId" asp-items="ViewBag.AssetId">
+                    <option value="" selected>None</option>
+                </select>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

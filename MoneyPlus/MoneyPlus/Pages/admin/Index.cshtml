@@ -1,0 +1,25 @@
+﻿@page
+@model MoneyPlus.Pages.admin.IndexModel
+@{
+    ViewData["Title"] = "Enter the Password";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="col-md-4">
+    <form method="get">
+        <div class="form-group">
+            <label asp-for="@Model.pwd" class="control-label">Required Password</label>
+            <input asp-for="@Model.pwd" class="form-control" />
+            <span asp-validation-for="@Model.pwd" class="text-danger"></span>
+        </div>
+        <p></p>
+        <div class="form-group">
+            <input type="submit" value="Confirm" class="btn btn-primary" asp-page-handler="pwd" asp-page="./secret" asp-route-pwd="@Model.pwd"/>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

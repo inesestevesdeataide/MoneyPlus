@@ -1,0 +1,87 @@
+﻿@page
+@model MoneyPlus.Pages.Reports.MonthlyBalanceByCategoryAndSubModel
+@{
+    ViewData["Title"] = "Monthly Cash Outflows By Category And Subcategory";
+}
+
+<h1>Monthly Cash Outflows By Category And Subcategory</h1>
+<br />
+@if (@Model.HasPrevious())
+{
+    <a asp-page="/Reports/MonthlyBalanceByCategoryAndSub" asp-route-year="@Model.PreviousYear()">Previous Year</a>
+}
+@if (@Model.HasNext())
+{
+    <a asp-page="/Reports/MonthlyBalanceByCategoryAndSub" asp-route-year="@Model.NextYear()">Next Year</a>
+}
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th align='left'>
+                @Model.Year
+            </th>
+            @foreach (var month in @Model.Report.Months)
+            {
+                <th align='right'>
+                    @Html.DisplayFor(modelItem => month)
+                </th>
+            }
+            <th align='right'>
+                Total
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cat in @Model.Report.Categories)
+        {
+            <tr>
+                <td>
+                    <b>@Html.DisplayFor(modelItem => cat)</b>
+                </td>
+                @foreach (var month in @Model.Report.Months)
+                {
+                    <td align='right'>
+                        <b>@Model.Report.GetCatCellValue(month, cat)</b>
+                    </td>
+                }
+                <td align='right'>
+                    <b>@Model.Report.GetTotalInCat(cat)</b>
+                </td>
+            </tr>
+            @foreach (var sub in @Model.Report.GetSubcategoriesByCat(cat))
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => sub)
+                    </td>
+                    @foreach (var month in @Model.Report.Months)
+                    {
+                        <td align='right'>
+                            @Model.Report.GetCellValue(month, cat, sub)
+                        </td>
+                    }
+                    <td align='right'>
+                        @Model.Report.GetTotalInSub(sub)
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+    <tfoot>
+    <td>
+        <b>Total</b>
+    </td>
+    @foreach (var month in @Model.Report.Months)
+    {
+        <td align='right'>
+            <b>@Model.Report.GetTotalByMonth(month)</b>
+        </td>
+    }
+    <td align='right'>
+        <b>@Model.Report.Total</b>
+    </td>
+    <tfoot></tfoot>
+    </tfoot>
+</table>

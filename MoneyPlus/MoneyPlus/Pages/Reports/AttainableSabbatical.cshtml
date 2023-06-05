@@ -1,0 +1,72 @@
+﻿@page
+@model MoneyPlus.Pages.Reports.AttainableSabbaticalModel
+@{
+    ViewData["Title"] = "Attainable Sabbatical";
+}
+
+<h1>Attainable Sabbatical</h1>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <tD>
+                Your Current Average Cost of Living Over the Past 2 Years
+            </tD>
+            <td>
+                € @Html.DisplayFor(modelItem => modelItem.AverageCostLivingLast2Years) / year
+            </td>
+        </tr>
+    </thead>
+    <thead>
+        <tr>
+            <tD>
+                Your Assets' Value To This Day
+            </tD>
+            <td>
+                € @Html.DisplayFor(modelItem => modelItem.EveryAsset)
+            </td>
+        </tr>
+    </thead>
+    <thead>
+        <tr>
+            <tD>
+                Your <a asp-page=".././Wallets/Index">Wallets'</a> Value To This Day
+            </tD>
+            <td>
+                € @Html.DisplayFor(modelItem => modelItem.EveryWallet)
+            </td>
+        </tr>
+    </thead>
+    <thead>
+        <tr>
+            <th>
+                Number of Years You Can Go Without Working
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => modelItem.YearsWithoutWorking) years
+            </td>
+        </tr>
+    </thead>
+</table>
+<br>
+<h5>Parameters</h5>
+<div class="col-md-4">
+    <form method="get">
+        <div class="form-group">
+            <label asp-for="@Model.InflationRate" class="control-label">Average Expected Inflation Rate (%)</label>
+            <input asp-for="@Model.InflationRate" class="form-control" />
+            <span asp-validation-for="@Model.InflationRate" class="text-danger"></span>
+        </div>
+        <p></p>
+        <div class="form-group">
+            <label asp-for="@Model.ReturnOnInvestment" class="control-label">Average Expected Return On Investment (%)</label>
+            <input asp-for="@Model.ReturnOnInvestment" class="form-control" />
+            <span asp-validation-for="@Model.ReturnOnInvestment" class="text-danger"></span>
+        </div>
+        <p></p>
+        <div class="form-group">
+            @*<input type="hidden" asp-for="@Model.MonthYear" asp-route-monthYear="@Model.MonthYear" />*@
+            <input type="submit" value="Submit" class="btn btn-primary" asp-page-handler="Parameters" />
+        </div>
+    </form>
+</div>

@@ -1,0 +1,67 @@
+@page
+@model MoneyPlus.Pages.CashOutflows.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Cash Outflow</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CashOutflow.Payee)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CashOutflow.Payee.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Origin Wallet
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CashOutflow.OriginWallet.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CashOutflow.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CashOutflow.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CashOutflow.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CashOutflow.Type)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CashOutflow.Amount)
+        </dt>
+        <dd class="col-sm-10">
+            € @Html.DisplayFor(model => model.CashOutflow.Amount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CashOutflow.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CashOutflow.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CashOutflow.Subcategory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CashOutflow.Subcategory.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CashOutflow.Asset)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CashOutflow.Asset.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.CashOutflow?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

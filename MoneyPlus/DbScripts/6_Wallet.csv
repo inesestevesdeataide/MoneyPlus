@@ -1,0 +1,17 @@
+Id,Name,Balance,UserId,IsActive
+1,Blue Envelope,100,f5393034-3b67-4194-a722-0dfaea339762,1
+2,STD,10000,f5393034-3b67-4194-a722-0dfaea339762,1
+3,CGD,"86052,21000000002",c4d4bf94-fc79-43c8-b89a-5a204d31b4be,1
+4,Piggy Bank,2650,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,1
+5,Investment - Tesla Stocks,500,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,1
+6,Investment - Oliveirense Stocks,0,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,0
+7,Investment - Bitcoins,0,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,0
+8,Investment - bitcoins,0,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,0
+9,Investment - VSC Stocks,0,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,0
+10,Investment - Microsoft Stocks,0,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,0
+11,Investment - Microsoft Stocks,0,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,0
+12,Investment - Microsoft Stocks,0,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,0
+13,Investment - Apple Stocks,0,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,0
+14,Investment - Apple Stocks,0,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,0
+15,Investment - Apple Stocks,0,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,0
+16,Investment - Google Stocks,0,c4d4bf94-fc79-43c8-b89a-5a204d31b4be,0

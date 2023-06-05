@@ -1,0 +1,53 @@
+﻿@page
+@model MoneyPlus.Pages.Reports.YearlyBalanceByCategoryModel
+@{
+    ViewData["Title"] = "Yearly Cash Outflows By Category";
+}
+
+<h1>Yearly Cash Outflows By Category</h1>
+<br/>
+<table class="table">
+    <thead>
+        <tr align='right'>
+            <th>
+            </th>
+            @foreach (var year in @Model.Report.Years)
+            {
+                <th>
+                    @Html.DisplayFor(modelItem => year)
+                </th>
+            }
+            @*<th></th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cat in @Model.Report.Categories)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => cat)
+                </td>
+                @foreach (var year in @Model.Report.Years)
+                {
+                    <td align='right'>
+                        @*@Html.DisplayFor(modelItem => @Model.GetCellValue(year, cat))*@
+                        @*@{Model.GetCellValue(year, cat);}*@
+                        @Model.Report.GetCellValue(year, cat)
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+    <td>
+        <b>Total</b>
+    </td>
+    @foreach (var year in Model.Report.Years)
+    {
+        <td align='right'>
+            <b>@Model.Report.GetTotalByYear(year)</b>
+        </td>
+    }
+    <tfoot></tfoot>
+    </tfoot>
+</table>
