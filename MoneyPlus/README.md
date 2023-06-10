@@ -4,7 +4,7 @@
 
 **IN THIS FOLDER**
 
--> DbScripts folder: set of csv files exported from the current working database in ADS numbered by a appropriate order of insertion. Tables Category, Subcategory weren't included assuming you'll be working with the catSubcatList yaml file. Table DailyEmail is authomatically filled, so the file won't be in the folder either. innie@mail.com is the most active user in that DB (Password: -Uz$5nh7s3p7aD-)
+-> DbScripts folder: set of csv files exported from the current working database in ADS numbered by an appropriate order of insertion. Tables Category, Subcategory weren't included assuming you'll be working with the catSubcatList yaml file. Table DailyEmail is authomatically filled, so the file won't be in the folder either. innie@mail.com is the most active user in that DB (Password: -Uz$5nh7s3p7aD-)
 
 -> catSubcatList.yaml
    Path to read from yaml file in use:
